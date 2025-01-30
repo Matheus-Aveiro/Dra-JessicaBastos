@@ -3,19 +3,66 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Cores do tema claro */
+    --primary-color: rgb(96, 80, 99);
+    --secondary-color: rgb(53, 42, 55);
+    --tertiary-color: white;
+
+    --primary-button-color: rgb(176, 142, 99);
+    --secondary-button-color: white;
+
+    --primary-background: rgb(246, 244, 239);
+    --secondary-background: rgb(235, 230, 222);
+
+    --primary-text-color: black;
+    --secondary-text-color: white;
+
+    --foreground: rgb(96, 80, 99);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        /* Cores do tema escuro */
+        --first-background: rgb(246, 244, 239);
+        --second-background: rgb(246, 244, 239);
+        --foreground: rgb(96, 80, 99);
+    }
 }
 
+/* Definindo as cores de fundo e texto no body */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Definir cores personalizadas para o Tailwind (caso queira usar as variáveis no Tailwind) */
+@layer base {
+    .bg-background {
+        background-color: var(--background);
+    }
+
+    .text-foreground {
+        color: var(--foreground);
+    }
+
+    .bg-primary {
+        background-color: var(--primary-color);
+    }
+
+    .bg-secondary {
+        background-color: var(--secondary-color);
+    }
+
+    .bg-button {
+        background-color: var(--button-color);
+    }
+
+    .bg-first-background {
+        background-color: var(--first-background);
+    }
+
+    .bg-second-background {
+        background-color: var(--second-background);
+    }
 }
